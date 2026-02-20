@@ -24,13 +24,17 @@ function Navbar() {
             <a href="#">Postagens</a>
           </li>
           <li>
-            <a href="#">Temas</a>
+            <Link to="/temas" className="hover:underline">
+              Temas
+            </Link>
           </li>
           <li>
             <a href="#">Cadastrar Tema</a>
           </li>
           <li>
-            <Link to={"/login"}>Perfil</Link>
+            <Link to={"/login"} className="hover:underline">
+              Perfil
+            </Link>
           </li>
           <li>
             <Link to="" onClick={logout} className="hover:underline">
