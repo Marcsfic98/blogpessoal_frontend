@@ -29,7 +29,9 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <a href="#">Cadastrar Tema</a>
+            <Link to="/cadastrartema" className="hover:underline">
+              Cadastrar Tema
+            </Link>
           </li>
           <li>
             <Link to={"/login"} className="hover:underline">
