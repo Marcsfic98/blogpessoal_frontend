@@ -2,6 +2,7 @@ import { useContext, useEffect, useState, type ChangeEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { AuthContext } from "../../../../contexts/AuthContext";
+import { ToastAlert } from "../../../../utils/ToastAlert";
 import type { Tema } from "../../../models/Tema";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 
@@ -65,14 +66,17 @@ function FormTema() {
           headers: { Authorization: token },
         });
 
-        alert("Tema atualizado com sucesso!");
+        ToastAlert("Tema atualizado com sucesso!", "sucesso");
         retornar();
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
         if (error.toString().includes("401")) {
           handleLogout();
         } else {
-          alert("Erro ao atualizar o tema. Por favor, tente novamente.");
+          ToastAlert(
+            "Erro ao atualizar o tema! Por favor, tente novamente.",
+            "erro"
+          );
         }
       }
     } else {
@@ -80,14 +84,17 @@ function FormTema() {
         await cadastrar(`/temas`, tema, setTema, {
           headers: { Authorization: token },
         });
-        alert("Tema cadastrado com sucesso!");
+        ToastAlert("Tema cadastrado com sucesso!", "successo");
         retornar();
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (error: any) {
         if (error.toString().includes("401")) {
           handleLogout();
         } else {
-          alert("Erro ao cadastrar o tema. Por favor, tente novamente.");
+          ToastAlert(
+            "Erro ao cadastrar o tema! Por favor, tente novamente.",
+            "erro"
+          );
         }
       }
     }

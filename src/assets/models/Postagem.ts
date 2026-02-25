@@ -4,9 +4,9 @@ import type { Usuario } from "./Usuario";
 
 export interface Postagem{
   id:number
-  title:string
+  titulo:string
   texto:string
   data:string
   tema: Tema | null
-  Usuario: Usuario | null
+  usuario: Usuario | null
 }

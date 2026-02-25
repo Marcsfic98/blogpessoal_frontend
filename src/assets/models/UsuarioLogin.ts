@@ -1,7 +1,7 @@
 export interface UsuarioLogin {
   id:number
   nome:string
-  Usuario:string
+  usuario:string
   senha:string
   foto:string
   token:string
