@@ -46,7 +46,7 @@ function Login() {
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              value={usuarioLogin.Usuario}
+              value={usuarioLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
               }
